@@ -8,7 +8,9 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
+
 """
+
 
 import os
 
@@ -55,7 +57,13 @@ ROOT_URLCONF = 'new_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates'  # Προσθέτουμε το φάκελο templates
+            # για να μπορέσουμε να χρησιμοποιήσουμε templates
+            # που βρίσκονται σε αυτόν το φάκελο
+            # και να μην χρειάζεται να τα βάζουμε σε κάθε εφαρμογή
+            # που φτιάχνουμε
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
